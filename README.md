@@ -1,33 +1,34 @@
-# Pattern Recognition Assignments 4: Face Detection using OpenCV
+***** DOCUMENTATION ********
+***** http://docs.opencv.org/ *****
 
-## Instructions
+Abstract:
 
-Clone this repository and write code to complete the assignments.
-This is a personal assignment, please complete it **individually**. 
+This code allows us to evaluate a dynamic image provided with a webcam and find the faces of people using a classifier trained to detect faces and eyes. Use the classifier that is detailed below, to expand the information should be consulted in the page named above (OpenCV).
 
-## OpenCV
+Cascade Classification¶
 
-- **Q1**) The file opencv-facedetect.ipynb has code to open a video
-    file and detect faces using a pre-trained cascade of classifiers
-    from OpenCV. Your task will be to read and understand the code,
-    and re-write it using C++ to detect faces in a video stream coming
-    from a webcam. You can use the code you developed in earlier
-    homework assignments as a template.
+Haar Feature-based Cascade Classifier for Object Detection¶
 
-## Extra
+CascadeClassifier::detectMultiScale¶
 
-- **Q2**) Now that you can locate the faces in the video, let's try to
-    decorate them! Load the Charlie Chaplin hat and mustache from the
-    img folder, and paint them in the image at the appropriate
-    locations based on the detected faces.
+Detects objects of different sizes in the input image. The detected objects are returned as a list of rectangles.
 
-- **Q3**) Haar features are not the only type available in
-    OpenCV. There are also cascade detectors trained using Local
-    Binary Patterns (LBP). Use the LBP based cascade detector and
-    compare the performance of both. You can find this (and other
-    cascades) in /usr/share/opencv/, or online at the [OpenCV
-    github](https://github.com/Itseez/opencv/tree/master/data).
+C++: void CascadeClassifier::detectMultiScale(const Mat& image, vector<Rect>& objects, double scaleFactor=1.1, int minNeighbors=3, int flags=0, Size minSize=Size(), Size maxSize=Size())
 
-- **Q4**) The example provided in the notebook is a "bare bones"
-    one. For a more complete example see
-    [facedetect.py](https://github.com/Itseez/opencv/blob/master/samples/python2/facedetect.py). Read it and understand how it works.
+Where Parameters are:	
+
+cascade – Haar classifier cascade (OpenCV 1.x API only). It can be loaded from XML or YAML file using Load(). When the cascade is not needed anymore, release it using cvReleaseHaarClassifierCascade(&cascade).
+image – Matrix of the type CV_8U containing an image where objects are detected.
+objects – Vector of rectangles where each rectangle contains the detected object.
+scaleFactor – Parameter specifying how much the image size is reduced at each image scale.
+minNeighbors – Parameter specifying how many neighbors each candidate rectangle should have to retain it.
+flags – Parameter with the same meaning for an old cascade as in the function cvHaarDetectObjects. It is not used for a new cascade.
+minSize – Minimum possible object size. Objects smaller than that are ignored.
+maxSize – Maximum possible object size. Objects larger than that are ignored.
+The function is parallelized with the TBB library.
+
+
+
+
+
+
