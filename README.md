@@ -35,7 +35,9 @@ Where Parameters are:
 
 The function is parallelized with the TBB library.
 
-![Alt text](https://github.com/Sergimech/RoboticaUVic-FaceDetect/tree/master/img/exampleFD.png "Example")
+![EXAMPLE](/img/exampleFD.png)
+
+
 
 
 
