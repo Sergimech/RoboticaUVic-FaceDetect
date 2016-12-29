@@ -6,6 +6,10 @@
 
 This code allows us to evaluate a dynamic image provided with a webcam and find the faces of people using a classifier trained to detect faces and eyes. Use the classifier that is detailed below, to expand the information should be consulted in the page named above (OpenCV).
 
+### Abstract Q234:
+
+This is a demo where you can use different images and insert these in a video file, to this, we use the same cascade.
+
 ## Cascade Classification
 
 Haar Feature-based Cascade Classifier for Object Detection
